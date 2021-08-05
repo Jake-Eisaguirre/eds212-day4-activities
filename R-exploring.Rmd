@@ -1,0 +1,44 @@
+---
+title: "R-exploring"
+author: "Jake Eisaguirre"
+date: "8/5/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(skimr)
+library(GGally)
+```
+
+#explore data
+```{r}
+
+view(diamonds)
+
+names(diamonds)
+
+dim(diamonds)
+
+summary(diamonds)
+
+head(diamonds)
+
+tail(diamonds)
+
+skimr::skim(diamonds)
+
+
+ggpairs(data = diamonds)
+
+#scatter plot
+ggplot(data = diamonds, aes(x = carat, y = price)) +
+         geom_point()
+
+#histogram
+ggplot(data = diamonds, aes(x = carat)) +
+  geom_histogram()
+
+```
+
